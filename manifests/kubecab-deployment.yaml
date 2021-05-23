@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubecab
+  labels:
+    app: kubecab
+spec:
+  selector:
+    matchLabels:
+      app: kubecab
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubecab
+    spec:
+      containers:
+        - name: kubecab
+          image: naildocker/kubecab:0.0.1
+          imagePullPolicy: IfNotPresent
+
